@@ -1,0 +1,187 @@
+#cart{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin-right: 600px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 30px;
+}
+.informations{
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    margin-top: 30px;
+    margin-left: 10px;
+
+    height: 600px;
+    width: 1000px;
+    background: rgba(29, 29, 202, 0.1);
+    box-shadow:  var(--glow);
+}
+.result{
+    border: 1px solid var(--border);
+    height: 600px;
+    width: 400px;
+    margin-left: 1050px;
+    margin-top: -600px;
+    border-radius: 20px;
+
+    background: rgba(29, 29, 202, 0.1);
+    box-shadow: var(--glow);
+    overflow-y: auto;
+    
+}
+.informations h{
+    font-size: 25px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    margin-left: 50px;
+   display: flex;
+    margin-top: 10px;
+}
+#name{
+    display: block;
+    margin-top: 50px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: var(--gray);
+    font-size: 25px;
+    margin-left: 20px;
+}
+#name-input{
+    color: var(--white);
+    position: absolute;
+    background: rgba(126, 126, 202, 0.1);
+    border: 1px solid var(--gray);
+
+    height: 40px;
+    width: 300px;
+
+    border-radius: 9px;
+    margin-top: -10px;
+    margin-left: 19px;
+    font-size: larger;
+    box-shadow: 0px 0px 14px red;
+    transition: 0.5s;
+}
+#name-input:focus{
+    outline: none; 
+}
+#name-input:valid{
+    box-shadow: 0px 0px 14px green;
+}
+
+#number{
+    display: block;
+    margin-left: 600px;
+    margin-top: -50px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: var(--gray);
+    font-size: 25px;
+}
+#number-input{
+    margin-left: 590px;
+    color: var(--white);
+    position: absolute;
+    background: rgba(126, 126, 202, 0.1);
+    border: 1px solid var(--gray);
+
+    height: 40px;
+    width: 300px;
+
+    border-radius: 9px;
+    font-size: larger;
+    box-shadow: 0px 0px 14px red;
+    transition: 0.5s;
+    margin-top: -10px;
+}
+#number-input:focus{
+    outline: none;
+}
+#number-input:valid{
+     box-shadow: 0px 0px 14px green;
+}
+
+#number-input::-webkit-inner-spin-button {
+    opacity: 0;
+    width: 1px;
+    height: 0px;
+}
+
+#shippingaddr{
+    display: block;
+    margin-top: 200px;
+    margin-left: 100px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: var(--gray);
+    font-size: 25px;
+}
+#shippingaddr-input{
+    margin-top: 10px;
+    margin-left: 50px;
+    color: var(--white);
+
+    background: rgba(126, 126, 202, 0.1);
+    border: 1px solid var(--gray);
+
+    height: 50px;
+    width: 400px;
+
+    border-radius: 9px;
+    font-size: larger;
+    box-shadow: 0px 0px 14px rgb(250, 3, 3);
+    transition: 0.5s;
+}
+#shippingaddr-input:focus{
+    outline: none;
+}
+#shippingaddr-input:valid{
+    box-shadow: 0px 0px 14px green;
+}
+.result h{
+    display: block;
+    color: var(--gray);
+     font-size: 25px;
+     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+     margin-left: 25px;
+     margin-top: 25px;
+}
+.result p{
+    color: var(--white);
+    display: block;
+    align-items: center;
+
+    margin-left: 50px;
+    font-family:'Courier New', Courier, monospace;
+    font-size: 20px;
+}
+
+.result p span{
+    margin-left: 0px;
+    font-size: large;
+}
+.total{
+    display: flex;
+    border-top: 1px solid var(--gray);
+    margin: 5px;
+    text-shadow: var(--glow);
+
+
+}
+
+.confirm{
+    cursor: pointer;
+    display: inline;
+    margin-left: 100px;
+    width: 100px;
+    height: 60px;
+    border: none;
+    background-color: var(--blue);
+    font-size: 15px;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px var(--blue);
+    transition: var(--transition);
+    color: white;
+}
+.confirm:hover{
+   transform: scale(1.1);
+   box-shadow: 0px 0px 10px var(--blue);
+}

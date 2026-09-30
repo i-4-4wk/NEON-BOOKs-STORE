@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/style.css">
+    <link rel="stylesheet" href = "../static/add.css">
+    <title>Add Book - NeonBooks</title>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <a  class="logo">N <span>Ξ</span> ON BOOKS</a>
+            <p class="logo-text">Adding<span> New </span> Book </p>
+        </div>
+    </header>
+
+    <section id ="addbook">
+        <form method="POST" action="/addbook" enctype="multipart/form-data">
+        <div class = "add-card">
+            <!--the book cover-->
+            <div class ="cover-card">
+                    <label for="cover">🖼️ Book Cover Image</label><br>
+                    <input type="file" id="cover" name="cover" accept="image/*"><br>
+                    <small class="file-hint">Upload JPG, PNG, or GIF (optional)</small>
+            </div>
+            <!--the book title-->
+            <div class="book-Title">
+              <label for="title">Book Title </label>
+              <input type="text" id="title" name="title" placeholder="e.g. Digital Horizons..." required>
+            </div>
+            <!--description-->
+            <div class ="book-readme">
+                 <label for="readme">About book (optional) </label>
+                <input type="text" id ="read-me" name="readme" placeholder="about the book...">
+            </div>
+            <!--author name-->
+            <div class ="author">
+               <label for="author">Author</label>
+               <input type="text" id ="Author" name="author" placeholder="Author-name" required>
+            </div>
+            <!--the category button-->
+            <div class='category'>
+                <label for="category">category</label>
+                <input type ='text' name="category" placeholder='eg: sience, story, fiction...' id ='category'>
+            </div>
+            <!--the price-->
+            <div class="price">
+                <label for="price">set Price</label>
+                <input type="number" id="price-book" name="price" placeholder="set the price" required step="0.01" min="0">
+            </div>
+            
+        <!--the add button-->
+            <button type="submit" class="add-btn">➕ Add Book</button>
+        </div>
+        </form>
+
+    </section>
+
+</body>
+</html>

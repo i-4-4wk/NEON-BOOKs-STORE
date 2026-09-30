@@ -1,0 +1,5 @@
+ #flask:      https://flask.palletsprojects.com/en/stable/quickstart/#html-escaping
+  for html:   https://developer.mozilla.org/en-US/docs/Web
+   for css:   https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Table
+for sqlachemy:        https://docs.sqlalchemy.org/en/21/core/defaults.html
+***IMPORTANT for sqlachemy :          https://docs.sqlalchemy.org/en/21/orm/basic_relationships.html#using-sets-lists-or-other-collection-types-for-many-to-many

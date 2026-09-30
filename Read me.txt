@@ -1,0 +1,7 @@
+1.the admin is the only one who can add books and delete them if its out of stock 
+
+2.the clients can buy a book if he wants he just need to click on the book then choose he quantity and press add to cart 
+
+3. *** to access the admin configuration u need to type the route ( /admin ) the admin also can review the orders throw ( admin panel ) and clicks done if the order is completed 
+
+4. there is two data bases one for books and the other is for clients orders

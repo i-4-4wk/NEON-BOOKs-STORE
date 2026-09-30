@@ -1,0 +1,230 @@
+:root{
+  --bg-main: #050810;          /* main background */
+  --bg-secondary: #0a1020;     /* secondary sections */
+  --blue: #168cff;             /* main blue */
+  --blue-light: #52b8ff;       /* light blue */
+  --blue-dark: #0751a8;        /* dark blue */
+  --white: #f4f8ff;            /* main text */
+  --gray: #8d9bb5;             /* secondary text */
+  --card: rgba(12, 23, 42, 0.75);
+  --border: rgba(22, 140, 255, 0.25);
+  --glow: 0 0 30px rgba(22, 140, 255, 0.25);
+  --transition: 300ms;
+}
+
+
+
+.logo-text{
+
+    margin-right: 100px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 30px;
+
+}
+.logo-text span{
+   color: var(--blue);
+   text-shadow: 0px 0px 10px var(--blue-light);
+}
+
+.add-card{
+    position: relative;
+    align-content: center;
+    margin-left: 280px;
+    margin-top: 50px;
+
+    width: 1000px;
+    height: 500px;
+
+    background-color: var(--bg-secondary);
+
+    border: 1px solid var(--blue-dark);
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px var(--blue-dark);
+}
+.cover-card{
+    position: absolute;
+    margin-top: -200px;
+    margin-left: 50px;
+    border: 1px solid var(--blue-dark);
+    border-radius: 20px;
+    height: 400px;
+    background-color: var(--blue-dark);
+    transition: var(--transition);
+    width: 300px;
+}
+.cover-card:hover{
+    transition: var(--transition);
+    transform: scale(1.02);
+}
+
+label[for= "cover"]{
+    justify-content: center;
+    margin-left: 40px;
+    color: var(--gray);
+}
+.cover-card input{
+    cursor: pointer;
+    margin-top: 150px;
+    border: 1px solid var(--white);
+    border-radius: 20px;
+    width: 200px;
+    margin-left: 50px;
+    background-color: var(--bg-secondary);
+}
+.file-hint{
+    color: var(--gray);
+    margin-left: 50px;
+}
+.book-Title{
+    position: absolute;
+    margin-left: 400px;
+    margin-top: -200px;
+
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 40px;
+}
+#title{
+    position: absolute;
+    border-radius: 50px;
+    color: var(--white);
+    border: 1px solid var(--blue-dark);
+    background-color: var(--bg-secondary);
+    width: 300px;
+    height: 50px;
+    margin-left: 250px;
+    margin-top: -55px;
+    transition: var(--transition);
+}
+#title:focus{
+    transition: var(--transition);
+    color: var(--white);
+    font-size: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    outline: none;
+}
+.book-readme{
+    position: absolute;
+    margin-left: 400px;
+    margin-top: -120px;
+    font-size: 25px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    }
+
+#read-me{
+    color: var(--white);
+    position: absolute;
+    margin-top: -40px;
+    margin-left: 250px;
+    border-radius: 50px;
+    height: 50px;
+    width: 300px;
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--blue-dark);
+    transition: var(--transition);
+}
+#read-me:focus{
+    outline: none;
+    transition: var(--transition);
+    font-size: 20px;
+}
+
+.author{
+    margin-top: -50px;
+    position: absolute;
+    margin-left: 400px;
+    font-size: 20px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+
+}
+#Author{
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--blue-dark);
+    border-radius: 50px;
+    margin-left: 10px;
+    height: 30px;
+    width: 300px;
+    color: var(--white);
+    transition: var(--transition); 
+    margin-left: 200px;
+}
+
+
+#Author:focus{
+    transition: var(--transition); 
+    outline: none;
+    font-size: 20px;
+}
+
+.price{
+    margin-top: 100px;
+    position: absolute;
+    margin-left: 400px;
+    font-size: 20px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+
+
+}
+#price-book{
+    border: 1px solid var(--blue-dark);
+    border-radius: 10px;
+    height: 50px;
+    background-color: var(--bg-secondary);
+    color: var(--white);
+    transition: var(--transition);
+
+}
+#price-book:focus{
+    outline: none;
+    font-size: 20px;
+}
+
+.add-btn{
+    cursor: pointer;
+    position: absolute;
+    margin-left: 800px;
+    margin-top: 100px;
+    border: 1px solid var(--blue-dark);
+
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+    font-size: large;
+    background-color: var(--blue-light);
+    color: var(--white);
+    box-shadow: 0px 0px 5px var(--blue-light);
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    transition: var(--transition);
+}
+.add-btn:hover{
+   transform: scale(1.1);
+}
+
+
+/*==the spiner of the price===*/
+input[type="number"]::-webkit-inner-spin-button {
+    height: 0.10px;
+    width: 2px;
+    opacity: 0;
+}
+.category{
+    display: block;
+    margin-left: 400px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}
+#category{
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--blue);
+    border-radius: 50px;
+    height: 25px;
+    margin-left: 200px;
+    color: var(--white);
+    transition: var(--transition);
+    position: absolute;
+    
+}
+#category:focus{
+   outline: none;
+   font-size: larger;
+   
+}

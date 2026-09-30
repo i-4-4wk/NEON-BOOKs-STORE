@@ -1,0 +1,45 @@
+<!--after clicking on any book the information appears-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/style.css">
+    <link rel ="stylesheet" href="../static/buy.css">
+    <title> book  - NeonBooks</title>
+</head>
+<body>
+    <header>
+        <div class = "navbar">
+           <a href ="/" class = "logo">N <span>Ξ</span> ON   BOOKS</a>
+           <div id='cart'>
+                <a href="/cart" class="cart">🛒cart</a>
+           </div>
+           </div>
+    </header>
+    
+    <form method="POST" action="{{ url_for('buy', bookid=book.id) }}">
+     <div class ='b-book'>
+      <div class="b-cover">
+                {%if book.cover %}
+                    <img src="{{ url_for('static', filename='uploads/' + book.cover) }}" alt="{{ book.title }}" class ='-book-cover'>
+                {%else%}
+                    <img src ="../covers/LOGO.png" alt = 'by Default' class = '-book-cover'>        
+                {%endif %}
+      </div>
+    </div>
+        <div class='b-book-info'>
+          <h3 class ='b-book-title'>{{book.title}}</h3>
+          <article class="category"><p>{{book.category}}</p></article>
+          <p class = 'b-readme'>⬤ {{book.readme}}</p>
+          <p class ='b-book-author'>by: {{book.author}}</p>
+          <p class ='b-book-price'>1600 DA</p>
+        </div>
+
+        <div class="quantity">
+                <input type="number" id="quantity" name="quantity" value="1" min="0" max="5">   
+        </div>
+        <button type="submit" class="addtocartbtn">🛒 Add to Cart</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel = 'stylesheet' href = "../static/style.css">
+    <title>NeonBooks</title>
+  </head>
+  <body>
+    <header>
+        <div class = "navbar">
+           <a href ="/" class = "logo">N <span>Ξ</span> ON   BOOKS</a>
+           <a href = "#book" class = "book-ref">books</a>
+           <a href = "#contact" class = "contact-ref">contact</a>
+           <a href="/cart" class="cart">🛒cart</a>
+           <a href = "#book" class ="explore-ref">Explore</a>
+           </div>
+    </header>
+    
+    <div class = "page-one">
+        <div class = "title1">
+          <p>Digital Bookstore/2026</p>
+        </div>
+      <h1>READ THE <br><span>FUTURE.</span></h1>
+      <p1>Discover books that expand your imagination, challenge your ideas and help<br> you build the future. A modern bookstore for curious minds. </p>
+      <a href="#book" class= "browse"> Browse Books</a>
+    </div>
+    
+    <div class ="book-logo">
+      <p>N E O N<br><span>A r c h i t e c t u r e</span></p>
+    </div>
+    
+    <section id="book">
+              <h class="featured">Featured Books</h><br>
+              <p class="featured-text">Selected for curious minds.</p> 
+        <div class = 'books-grid'>
+             {% for book in books%}
+               <a href= '/buybook/{{book.id}}' class ='book'>
+                    <div class ='book-info'>
+                      <div class = 'cover'>
+                       {%if book.cover %}
+                        <img src="{{ url_for('static', filename='uploads/' + book.cover) }}" alt="{{ book.title }}" class ='book-cover'>
+                       {%else%}
+                        <img src ="../covers/LOGO.png" alt = 'by Default' class = 'book-cover'>        
+                       {%endif %}
+                    </div>
+                      <h3 class ='book-title'>{{book.title}}</h3>
+                      <p class = 'readme'>⬤ {{book.readme}}</p>
+                      <p class ='book-author'>by: {{book.author}}</p>
+                      <p class ='book-price'>{{ "%.2f"|format(book.price) }} DA</p>
+                </div>
+            </a>
+              {% endfor%}
+                         
+        </div>
+     
+    </section>
+   
+
+<!--contact-->
+
+    <section id="contact">
+
+            <div class="newsletter">
+
+                <h2>Stay Curious.</h2>
+
+                <p>
+                    Get new releases, recommendations and
+                    interesting books delivered to your inbox.
+                </p>
+
+                <form class="email-box">
+
+                    <input
+                        type="email"
+                        placeholder="your@email.com"
+                    >
+
+                    <button class="e-btn">
+                        Subscribe
+                    </button>
+
+                </form>
+
+            </div>
+
+    </section>
+
+
+
+  </body>
+</html>

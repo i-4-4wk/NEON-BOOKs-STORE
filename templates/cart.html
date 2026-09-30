@@ -1,0 +1,44 @@
+<!--after clicking on any book the information appears-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/style.css">
+    <link rel ="stylesheet" href="../static/cart.css">
+    <title> book  - NeonBooks</title>
+</head>
+<body>
+    <header>
+        <div class = "navbar">
+        <a href ="/" class = "logo">N <span>Ξ</span> ON   BOOKS</a>
+           <div id='cart'>
+               <h class="p-cart">🛒 CART</h>
+           </div>
+        </div>
+    </header>   
+    <div class ='informations'>
+        <h>Contact info</h>
+        <form method="POST" action="/cart">
+         <label for='name' id='name'>name</label><br>
+         <input type='text' id="name-input" required placeholder="Full name" name='clientname'>
+         <label for="number" id='number'>primary number</label><br>
+         <input type='text' name ='clientnumber' inputmode="numeric" pattern="[0-9]*" id="number-input" required placeholder="XXXXXXXXXX" minlength="10" maxlength="10">
+         <label for='Shipping-adrr' id ='shippingaddr'>Shipping Address</label>
+         <input type="text"  id='shippingaddr-input' name='shippingaddr' required placeholder="Wilaya, City">
+         <button type="submit" class ='confirm'>✅confirm order</button>
+        </form>
+    </div>
+    <div class ='result'>
+        <h>Summary</h>
+
+        {% for i in cart_items%}
+         <p>{{i[0]}} x{{i[1]}} <span>{{i[2]}}</span>DA</p><br>
+        {%endfor%}
+
+        <h class="total">TOTAL: {{total}} DA</h>
+
+
+    </div>
+</body>
+</html>

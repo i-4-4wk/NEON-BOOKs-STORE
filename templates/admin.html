@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel = 'stylesheet' href = "../static/style.css">
+    <title>NeonBooks</title>
+  </head>
+  <body>
+    <header>
+        <div class = "navbar">
+           <a href ="#" class = "logo">N <span>Ξ</span> ON   BOOKS</a>
+           <a href = "#book" class = "book-ref">books</a>
+           <a href = "/admin/panel" class = "contact-ref">Admin-Panel</a>
+           <a href = "#book" class ="explore-ref">Explore</a>
+           </div>
+    </header>
+    
+    <div class = "page-one">
+        <div class = "title1">
+          <p>Digital Bookstore/2026</p>
+        </div>
+      <h1>READ THE <br><span>FUTURE.</span></h1>
+      <p1>Discover books that expand your imagination, challenge your ideas and help<br> you build the future. A modern bookstore for curious minds. </p>
+      <a href="#book" class= "browse"> Browse Books</a>
+    </div>
+    
+    <div class ="book-logo">
+      <p>N E O N<br><span>A r c h i t e c t u r e</span></p>
+    </div>
+    
+    <section id="book">
+              <h class="featured">Featured Books</h><br>
+              <p class="featured-text">Selected for curious minds.</p> 
+        <div class = 'books-grid'>
+             {% for book in books%}
+               <article class ='book'>
+                    <div class ='book-info'>
+                      <div class = 'cover'>
+                       {%if book.cover %}
+                        <img src="{{ url_for('static', filename='uploads/' + book.cover) }}" alt="{{ book.title }}" class ='book-cover'>
+                       {%else%}
+                        <img src ="../covers/LOGO.png" alt = 'by Default' class = 'book-cover'>        
+                       {%endif %}
+                    </div>
+                      <h3 class ='book-title'>{{book.title}}</h3>
+                      <p class = 'readme'>⬤ {{book.readme}}</p>
+                      <p class ='book-author'>by: {{book.author}}</p>
+                      <p class ='book-price'>{{ "%.2f"|format(book.price) }} DA</p>
+                      <div class="book-actions">
+                        <form method="POST" action="/admin">
+                          <input type="hidden" name="delete_id" value="{{ book.id }}">
+                          <button type="submit" class="delete-btn" onclick="return confirm('Delete {{ book.title }}?')">🗑️ Delete</button>
+                        </form>
+                        </div>
+                    </div>
+                    
+                </article>
+              {% endfor%}
+                         
+               <article>
+                   <a href="/addbook" class ="add-book">Add <span>+</span></a>
+               </article>
+        </div>
+     
+    </section>
+  </body>
+</html>
+
+
+
+<style>
+.delete-form {
+    display: flex;
+    justify-content: center;
+    padding: 0 15px 15px 15px;
+    margin-top: 10px;
+}
+
+.delete-btn {
+    padding: 10px 25px;
+    border: 1px solid #ff6b6b;
+    border-radius: 8px;
+    background: transparent;
+    color: #ff6b6b;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: var(--transition);
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    margin-left: 20px;
+}
+
+.delete-btn:hover {
+    background: #ff6b6b;
+    color: white;
+    box-shadow: 0 0 15px rgba(255, 107, 107, 0.4);
+    transform: scale(1.05);
+}
+
+.delete-btn:active {
+    transform: scale(0.9);
+}
+</style>
